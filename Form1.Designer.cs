@@ -38,6 +38,12 @@
             buttonFacile = new Button();
             buttonMedio = new Button();
             buttonDifficile = new Button();
+            buttonStart = new Button();
+            labelParolaNascosta = new Label();
+            labelParola = new Label();
+            textBoxInserimento = new TextBox();
+            labelInserisciLettera = new Label();
+            buttonInserisci = new Button();
             SuspendLayout();
             // 
             // Titolo
@@ -115,9 +121,9 @@
             // buttonFacile
             // 
             buttonFacile.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonFacile.Location = new Point(31, 234);
+            buttonFacile.Location = new Point(31, 232);
             buttonFacile.Name = "buttonFacile";
-            buttonFacile.Size = new Size(181, 102);
+            buttonFacile.Size = new Size(181, 104);
             buttonFacile.TabIndex = 7;
             buttonFacile.Text = "facile";
             buttonFacile.UseVisualStyleBackColor = true;
@@ -129,11 +135,12 @@
             buttonMedio.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             buttonMedio.Location = new Point(317, 234);
             buttonMedio.Name = "buttonMedio";
-            buttonMedio.Size = new Size(192, 102);
+            buttonMedio.Size = new Size(192, 104);
             buttonMedio.TabIndex = 8;
             buttonMedio.Text = "medio";
             buttonMedio.UseVisualStyleBackColor = true;
             buttonMedio.Visible = false;
+            buttonMedio.Click += buttonMedio_Click;
             // 
             // buttonDifficile
             // 
@@ -145,12 +152,80 @@
             buttonDifficile.Text = "Difficile";
             buttonDifficile.UseVisualStyleBackColor = true;
             buttonDifficile.Visible = false;
+            buttonDifficile.Click += buttonDifficile_Click;
+            // 
+            // buttonStart
+            // 
+            buttonStart.Font = new Font("Showcard Gothic", 32.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonStart.Location = new Point(327, 164);
+            buttonStart.Name = "buttonStart";
+            buttonStart.Size = new Size(166, 64);
+            buttonStart.TabIndex = 10;
+            buttonStart.Text = "START";
+            buttonStart.UseVisualStyleBackColor = true;
+            buttonStart.Visible = false;
+            buttonStart.Click += buttonStart_Click;
+            // 
+            // labelParolaNascosta
+            // 
+            labelParolaNascosta.AutoSize = true;
+            labelParolaNascosta.Location = new Point(369, 356);
+            labelParolaNascosta.Name = "labelParolaNascosta";
+            labelParolaNascosta.Size = new Size(0, 15);
+            labelParolaNascosta.TabIndex = 11;
+            // 
+            // labelParola
+            // 
+            labelParola.AutoSize = true;
+            labelParola.Font = new Font("Showcard Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelParola.Location = new Point(153, 278);
+            labelParola.Name = "labelParola";
+            labelParola.Size = new Size(0, 60);
+            labelParola.TabIndex = 12;
+            // 
+            // textBoxInserimento
+            // 
+            textBoxInserimento.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxInserimento.Location = new Point(533, 185);
+            textBoxInserimento.Name = "textBoxInserimento";
+            textBoxInserimento.Size = new Size(100, 39);
+            textBoxInserimento.TabIndex = 13;
+            textBoxInserimento.Visible = false;
+            // 
+            // labelInserisciLettera
+            // 
+            labelInserisciLettera.AutoSize = true;
+            labelInserisciLettera.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelInserisciLettera.Location = new Point(533, 153);
+            labelInserisciLettera.Name = "labelInserisciLettera";
+            labelInserisciLettera.Size = new Size(151, 17);
+            labelInserisciLettera.TabIndex = 14;
+            labelInserisciLettera.Text = "Inserisci la lettera:";
+            labelInserisciLettera.Visible = false;
+            // 
+            // buttonInserisci
+            // 
+            buttonInserisci.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonInserisci.Location = new Point(654, 185);
+            buttonInserisci.Name = "buttonInserisci";
+            buttonInserisci.Size = new Size(101, 38);
+            buttonInserisci.TabIndex = 15;
+            buttonInserisci.Text = "Inserisci";
+            buttonInserisci.UseVisualStyleBackColor = true;
+            buttonInserisci.Visible = false;
+            buttonInserisci.Click += buttonInserisci_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(861, 432);
+            Controls.Add(buttonInserisci);
+            Controls.Add(labelInserisciLettera);
+            Controls.Add(textBoxInserimento);
+            Controls.Add(labelParola);
+            Controls.Add(labelParolaNascosta);
+            Controls.Add(buttonStart);
             Controls.Add(buttonDifficile);
             Controls.Add(buttonMedio);
             Controls.Add(buttonFacile);
@@ -179,5 +254,11 @@
         private Button buttonFacile;
         private Button buttonMedio;
         private Button buttonDifficile;
+        private Button buttonStart;
+        private Label labelParolaNascosta;
+        private Label labelParola;
+        private TextBox textBoxInserimento;
+        private Label labelInserisciLettera;
+        private Button buttonInserisci;
     }
 }
