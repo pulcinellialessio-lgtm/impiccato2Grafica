@@ -44,6 +44,10 @@
             textBoxInserimento = new TextBox();
             labelInserisciLettera = new Label();
             buttonInserisci = new Button();
+            textBoxParola = new TextBox();
+            buttonInserisciParola = new Button();
+            labelInserisciParola = new Label();
+            labelVincita = new Label();
             SuspendLayout();
             // 
             // Titolo
@@ -215,11 +219,59 @@
             buttonInserisci.Visible = false;
             buttonInserisci.Click += buttonInserisci_Click;
             // 
+            // textBoxParola
+            // 
+            textBoxParola.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            textBoxParola.Location = new Point(533, 313);
+            textBoxParola.Name = "textBoxParola";
+            textBoxParola.Size = new Size(100, 37);
+            textBoxParola.TabIndex = 16;
+            textBoxParola.Visible = false;
+            textBoxParola.TextChanged += textBoxParola_TextChanged;
+            // 
+            // buttonInserisciParola
+            // 
+            buttonInserisciParola.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonInserisciParola.Location = new Point(654, 313);
+            buttonInserisciParola.Name = "buttonInserisciParola";
+            buttonInserisciParola.Size = new Size(101, 41);
+            buttonInserisciParola.TabIndex = 17;
+            buttonInserisciParola.Text = "Inserisci";
+            buttonInserisciParola.UseVisualStyleBackColor = true;
+            buttonInserisciParola.Visible = false;
+            buttonInserisciParola.Click += buttonInserisciParola_Click;
+            // 
+            // labelInserisciParola
+            // 
+            labelInserisciParola.AutoSize = true;
+            labelInserisciParola.Font = new Font("Showcard Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelInserisciParola.Location = new Point(533, 278);
+            labelInserisciParola.Name = "labelInserisciParola";
+            labelInserisciParola.Size = new Size(146, 17);
+            labelInserisciParola.TabIndex = 18;
+            labelInserisciParola.Text = "Inserisci la parola:";
+            labelInserisciParola.Visible = false;
+            // 
+            // labelVincita
+            // 
+            labelVincita.AutoSize = true;
+            labelVincita.Font = new Font("Showcard Gothic", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelVincita.Location = new Point(195, 153);
+            labelVincita.Name = "labelVincita";
+            labelVincita.Size = new Size(438, 79);
+            labelVincita.TabIndex = 19;
+            labelVincita.Text = "Hai vinto!!!";
+            labelVincita.Visible = false;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(861, 432);
+            Controls.Add(labelVincita);
+            Controls.Add(labelInserisciParola);
+            Controls.Add(buttonInserisciParola);
+            Controls.Add(textBoxParola);
             Controls.Add(buttonInserisci);
             Controls.Add(labelInserisciLettera);
             Controls.Add(textBoxInserimento);
@@ -260,5 +312,9 @@
         private TextBox textBoxInserimento;
         private Label labelInserisciLettera;
         private Button buttonInserisci;
+        private TextBox textBoxParola;
+        private Button buttonInserisciParola;
+        private Label labelInserisciParola;
+        private Label labelVincita;
     }
 }

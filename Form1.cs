@@ -6,6 +6,7 @@ namespace impiccato2Grafica
         string riga, ParolaNascosta, trattini = "";
         int num = 0;
         string[] rigaSplit;
+        char[] parolaNascostaArray;
 
         public void visible()
         {
@@ -72,7 +73,6 @@ namespace impiccato2Grafica
         {
             rigaSplit = riga.Split(',');
             ParolaNascosta = rigaSplit[0];
-            ParolaNascosta.ToLower();
 
             invisible();
         }
@@ -81,7 +81,6 @@ namespace impiccato2Grafica
         {
             rigaSplit = riga.Split(',');
             ParolaNascosta = rigaSplit[1];
-            ParolaNascosta.ToLower();
 
             invisible();
         }
@@ -90,7 +89,6 @@ namespace impiccato2Grafica
         {
             rigaSplit = riga.Split(',');
             ParolaNascosta = rigaSplit[2];
-            ParolaNascosta.ToLower();
 
             invisible();
         }
@@ -101,6 +99,11 @@ namespace impiccato2Grafica
             textBoxInserimento.Visible = true;
             labelInserisciLettera.Visible = true;
             buttonInserisci.Visible = true;
+
+            textBoxParola.Visible = true;
+            labelInserisciParola.Visible = true;
+
+            ParolaNascosta.ToLower();
 
             for (int i = 0; i < ParolaNascosta.Length; i++)
             {
@@ -113,7 +116,7 @@ namespace impiccato2Grafica
         private void buttonInserisci_Click(object sender, EventArgs e)
         {
             char[] trattiniArray = trattini.ToCharArray();
-            char[] parolaNascostaArray = ParolaNascosta.ToCharArray();
+            parolaNascostaArray = ParolaNascosta.ToCharArray();
 
             char lettera = Convert.ToChar(textBoxInserimento.Text);
 
@@ -125,7 +128,38 @@ namespace impiccato2Grafica
                 }
             }
 
-            labelParola.Text = new string(trattiniArray);
+            trattini = new string(trattiniArray);
+            labelParola.Text = trattini;
+        }
+
+        private void textBoxParola_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonInserisciParola_Click(object sender, EventArgs e)
+        {
+            string Parola = textBoxParola.Text;
+            char[] ParolaUguale = Parola.ToCharArray();
+            bool uguale = true;
+
+            for(int i = 0; i <  parolaNascostaArray.Length; i++)
+            {
+                if (parolaNascostaArray[i] != ParolaUguale[i])
+                {
+                    uguale = false;
+                }
+            }
+
+            if(uguale == true)
+            {
+                labelVincita.Visible = true;
+                invisible();
+            }
+            else
+            {
+
+            }
         }
     }
 }
