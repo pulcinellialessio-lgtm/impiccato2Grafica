@@ -102,6 +102,7 @@ namespace impiccato2Grafica
 
             textBoxParola.Visible = true;
             labelInserisciParola.Visible = true;
+            buttonInserisciParola.Visible = true;
 
             ParolaNascosta.ToLower();
 
@@ -143,7 +144,7 @@ namespace impiccato2Grafica
             char[] ParolaUguale = Parola.ToCharArray();
             bool uguale = true;
 
-            for(int i = 0; i <  parolaNascostaArray.Length; i++)
+            for (int i = 0; i < parolaNascostaArray.Length; i++)
             {
                 if (parolaNascostaArray[i] != ParolaUguale[i])
                 {
@@ -151,14 +152,22 @@ namespace impiccato2Grafica
                 }
             }
 
-            if(uguale == true)
+            if (uguale == true)
             {
                 labelVincita.Visible = true;
-                invisible();
+                textBoxInserimento.Visible = false;
+                labelInserisciLettera.Visible = false;
+                buttonInserisci.Visible = false;
+
+                textBoxParola.Visible = false;
+                labelInserisciParola.Visible = false;
+                buttonInserisciParola.Visible = false;
+
+                labelParola.Visible = false;
             }
             else
             {
-
+                labelParolaSbagliata.Visible = true;
             }
         }
     }

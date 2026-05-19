@@ -118,7 +118,28 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="testa" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\testa.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gemini_Generated_Image_y6zo8y6zo8y6zo8y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gemini_Generated_Image_y6zo8y6zo8y6zo8y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corpo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corpo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="orizzontaleS" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\orizzontaleS.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="189086133-hangman-or-hang-man-guessing-game-icon-line-art-vector-icon-for-apps-and-websites" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\189086133-hangman-or-hang-man-guessing-game-icon-line-art-vector-icon-for-apps-and-websites.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="corpo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\corpo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="png-clipart-line-angle-font-line-angle-rectangle" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\png-clipart-line-angle-font-line-angle-rectangle.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gemini_Generated_Image_ccph77ccph77ccph" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gemini_Generated_Image_ccph77ccph77ccph.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
