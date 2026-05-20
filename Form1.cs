@@ -4,9 +4,10 @@ namespace impiccato2Grafica
     {
         Random rnd = new Random();
         string riga, ParolaNascosta, trattini = "";
-        int num = 0;
+        int num = 0, vita = 6;
         string[] rigaSplit;
         char[] parolaNascostaArray;
+        char[] trattiniArray;
 
         public void visible()
         {
@@ -29,6 +30,17 @@ namespace impiccato2Grafica
             buttonSport.Visible = false;
 
             buttonStart.Visible = true;
+        }
+
+        public void invisible2()
+        {
+            textBoxInserimento.Visible = false;
+            labelInserisciLettera.Visible = false;
+            labelInserisciParola.Visible = false;
+            textBoxParola.Visible = false;
+            buttonInserisci.Visible = false;
+            buttonInserisciParola.Visible = false;
+            buttonJolly.Visible = false;    
         }
         public Form1()
         {
@@ -104,7 +116,12 @@ namespace impiccato2Grafica
             labelInserisciParola.Visible = true;
             buttonInserisciParola.Visible = true;
 
-            ParolaNascosta.ToLower();
+            pictureBoxCorda.Visible = true;
+            pictureBoxSopra.Visible = true;
+
+            buttonJolly.Visible = true;
+
+            ParolaNascosta = ParolaNascosta.ToLower();
 
             for (int i = 0; i < ParolaNascosta.Length; i++)
             {
@@ -116,10 +133,12 @@ namespace impiccato2Grafica
 
         private void buttonInserisci_Click(object sender, EventArgs e)
         {
-            char[] trattiniArray = trattini.ToCharArray();
+            int a = 0;
+            trattiniArray = trattini.ToCharArray();
             parolaNascostaArray = ParolaNascosta.ToCharArray();
 
             char lettera = Convert.ToChar(textBoxInserimento.Text);
+            bool trovato = true;
 
             for (int i = 0; i < parolaNascostaArray.Length; i++)
             {
@@ -127,17 +146,60 @@ namespace impiccato2Grafica
                 {
                     trattiniArray[i] = lettera;
                 }
+                else
+                {
+                    a++;
+                }
             }
 
             trattini = new string(trattiniArray);
+
+            if (a == parolaNascostaArray.Length)
+            {
+                trovato = false;
+            }
+
+            if (trovato == false)
+            {
+                vita--;
+
+                if (vita == 5)
+                {
+                    pictureBoxTesta.Visible = true;
+                }
+                else if (vita == 4)
+                {
+                    pictureBoxCorpo.Visible = true;
+                }
+                else if (vita == 3)
+                {
+                    pictureBoxBraccioD.Visible = true;
+                    pictureBoxBraccioD.BringToFront();
+                }
+                else if (vita == 2)
+                {
+                    pictureBoxBraccioS.Visible = true;
+                    pictureBoxBraccioS.BringToFront();
+                }
+                else if (vita == 1)
+                {
+                    pictureBoxGambaD.Visible = true;
+                }
+                else if (vita == 0)
+                {
+                    pictureBoxGambaS.Visible = true;
+
+                    invisible2();
+
+                    labelParolaSbagliata.Visible = true;
+
+                    trattini = new string(parolaNascostaArray);
+                }
+            }
+
+
             labelParola.Text = trattini;
         }
-
-        private void textBoxParola_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonInserisciParola_Click(object sender, EventArgs e)
         {
             string Parola = textBoxParola.Text;
@@ -164,11 +226,21 @@ namespace impiccato2Grafica
                 buttonInserisciParola.Visible = false;
 
                 labelParola.Visible = false;
+
+                buttonJolly.Visible = false;
             }
             else
             {
                 labelParolaSbagliata.Visible = true;
             }
+        }
+        private void buttonJolly_Click(object sender, EventArgs e)
+        {
+            trattiniArray = trattini.ToCharArray();
+            parolaNascostaArray = ParolaNascosta.ToCharArray();
+            trattiniArray[0] = parolaNascostaArray[0];
+            trattini = new string(trattiniArray);
+            labelParola.Text = trattini;
         }
     }
 }

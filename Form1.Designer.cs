@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             Titolo = new Label();
-            dateTimePicker1 = new DateTimePicker();
             buttonCibi = new Button();
             buttonAnimali = new Button();
             buttonSport = new Button();
@@ -55,16 +54,17 @@
             pictureBoxSopra = new PictureBox();
             pictureBoxBraccioD = new PictureBox();
             pictureBoxGambaD = new PictureBox();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
+            pictureBoxBraccioS = new PictureBox();
+            pictureBoxGambaS = new PictureBox();
+            buttonJolly = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBoxTesta).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCorda).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCorpo).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxSopra).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxBraccioD).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGambaD).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBraccioS).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGambaS).BeginInit();
             SuspendLayout();
             // 
             // Titolo
@@ -77,17 +77,10 @@
             Titolo.TabIndex = 0;
             Titolo.Text = "Impiccato";
             // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(12, 12);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(200, 23);
-            dateTimePicker1.TabIndex = 1;
-            // 
             // buttonCibi
             // 
             buttonCibi.Font = new Font("Showcard Gothic", 33.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonCibi.Location = new Point(31, 234);
+            buttonCibi.Location = new Point(31, 236);
             buttonCibi.Name = "buttonCibi";
             buttonCibi.Size = new Size(181, 102);
             buttonCibi.TabIndex = 2;
@@ -142,7 +135,7 @@
             // buttonFacile
             // 
             buttonFacile.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            buttonFacile.Location = new Point(31, 232);
+            buttonFacile.Location = new Point(31, 234);
             buttonFacile.Name = "buttonFacile";
             buttonFacile.Size = new Size(181, 104);
             buttonFacile.TabIndex = 7;
@@ -199,7 +192,7 @@
             // 
             labelParola.AutoSize = true;
             labelParola.Font = new Font("Showcard Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelParola.Location = new Point(153, 278);
+            labelParola.Location = new Point(153, 280);
             labelParola.Name = "labelParola";
             labelParola.Size = new Size(0, 60);
             labelParola.TabIndex = 12;
@@ -244,7 +237,6 @@
             textBoxParola.Size = new Size(100, 37);
             textBoxParola.TabIndex = 16;
             textBoxParola.Visible = false;
-            textBoxParola.TextChanged += textBoxParola_TextChanged;
             // 
             // buttonInserisciParola
             // 
@@ -273,7 +265,7 @@
             // 
             labelVincita.AutoSize = true;
             labelVincita.Font = new Font("Showcard Gothic", 48F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelVincita.Location = new Point(195, 153);
+            labelVincita.Location = new Point(259, 74);
             labelVincita.Name = "labelVincita";
             labelVincita.Size = new Size(438, 79);
             labelVincita.TabIndex = 19;
@@ -283,20 +275,21 @@
             // labelParolaSbagliata
             // 
             labelParolaSbagliata.AutoSize = true;
-            labelParolaSbagliata.Font = new Font("Showcard Gothic", 36F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            labelParolaSbagliata.Location = new Point(55, 74);
+            labelParolaSbagliata.Font = new Font("Showcard Gothic", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            labelParolaSbagliata.Location = new Point(238, 74);
             labelParolaSbagliata.Name = "labelParolaSbagliata";
-            labelParolaSbagliata.Size = new Size(734, 60);
+            labelParolaSbagliata.Size = new Size(565, 46);
             labelParolaSbagliata.TabIndex = 20;
             labelParolaSbagliata.Text = "Parola sbagliata riprova!!";
             labelParolaSbagliata.Visible = false;
             // 
             // pictureBoxTesta
             // 
+            pictureBoxTesta.BackColor = SystemColors.Control;
             pictureBoxTesta.Image = Properties.Resources.testa;
-            pictureBoxTesta.Location = new Point(90, 100);
+            pictureBoxTesta.Location = new Point(90, 57);
             pictureBoxTesta.Name = "pictureBoxTesta";
-            pictureBoxTesta.Size = new Size(122, 70);
+            pictureBoxTesta.Size = new Size(122, 77);
             pictureBoxTesta.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxTesta.TabIndex = 21;
             pictureBoxTesta.TabStop = false;
@@ -305,9 +298,9 @@
             // pictureBoxCorda
             // 
             pictureBoxCorda.Image = Properties.Resources.corpo2;
-            pictureBoxCorda.Location = new Point(90, 64);
+            pictureBoxCorda.Location = new Point(90, 24);
             pictureBoxCorda.Name = "pictureBoxCorda";
-            pictureBoxCorda.Size = new Size(122, 70);
+            pictureBoxCorda.Size = new Size(122, 30);
             pictureBoxCorda.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBoxCorda.TabIndex = 22;
             pictureBoxCorda.TabStop = false;
@@ -316,7 +309,7 @@
             // pictureBoxCorpo
             // 
             pictureBoxCorpo.Image = Properties.Resources.corpo2;
-            pictureBoxCorpo.Location = new Point(90, 164);
+            pictureBoxCorpo.Location = new Point(90, 136);
             pictureBoxCorpo.Name = "pictureBoxCorpo";
             pictureBoxCorpo.Size = new Size(122, 70);
             pictureBoxCorpo.SizeMode = PictureBoxSizeMode.Zoom;
@@ -327,7 +320,7 @@
             // pictureBoxSopra
             // 
             pictureBoxSopra.Image = Properties.Resources.png_clipart_line_angle_font_line_angle_rectangle;
-            pictureBoxSopra.Location = new Point(-5, 41);
+            pictureBoxSopra.Location = new Point(-9, -1);
             pictureBoxSopra.Name = "pictureBoxSopra";
             pictureBoxSopra.Size = new Size(172, 30);
             pictureBoxSopra.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -338,7 +331,7 @@
             // pictureBoxBraccioD
             // 
             pictureBoxBraccioD.Image = Properties.Resources.orizzontaleS;
-            pictureBoxBraccioD.Location = new Point(55, 164);
+            pictureBoxBraccioD.Location = new Point(55, 134);
             pictureBoxBraccioD.Name = "pictureBoxBraccioD";
             pictureBoxBraccioD.Size = new Size(92, 70);
             pictureBoxBraccioD.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -349,7 +342,7 @@
             // pictureBoxGambaD
             // 
             pictureBoxGambaD.Image = Properties.Resources.orizzontaleS;
-            pictureBoxGambaD.Location = new Point(55, 234);
+            pictureBoxGambaD.Location = new Point(52, 203);
             pictureBoxGambaD.Name = "pictureBoxGambaD";
             pictureBoxGambaD.Size = new Size(98, 70);
             pictureBoxGambaD.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -357,36 +350,49 @@
             pictureBoxGambaD.TabStop = false;
             pictureBoxGambaD.Visible = false;
             // 
-            // pictureBox1
+            // pictureBoxBraccioS
             // 
-            pictureBox1.Image = Properties.Resources.Gemini_Generated_Image_ccph77ccph77ccph;
-            pictureBox1.Location = new Point(153, 164);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(92, 70);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 27;
-            pictureBox1.TabStop = false;
-            pictureBox1.Visible = false;
+            pictureBoxBraccioS.Image = Properties.Resources.Gemini_Generated_Image_ccph77ccph77ccph;
+            pictureBoxBraccioS.Location = new Point(153, 133);
+            pictureBoxBraccioS.Name = "pictureBoxBraccioS";
+            pictureBoxBraccioS.Size = new Size(92, 70);
+            pictureBoxBraccioS.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxBraccioS.TabIndex = 27;
+            pictureBoxBraccioS.TabStop = false;
+            pictureBoxBraccioS.Visible = false;
             // 
-            // pictureBox2
+            // pictureBoxGambaS
             // 
-            pictureBox2.Image = Properties.Resources.Gemini_Generated_Image_ccph77ccph77ccph;
-            pictureBox2.Location = new Point(153, 232);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(92, 70);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 28;
-            pictureBox2.TabStop = false;
-            pictureBox2.Visible = false;
+            pictureBoxGambaS.Image = Properties.Resources.Gemini_Generated_Image_ccph77ccph77ccph;
+            pictureBoxGambaS.Location = new Point(152, 202);
+            pictureBoxGambaS.Name = "pictureBoxGambaS";
+            pictureBoxGambaS.Size = new Size(92, 70);
+            pictureBoxGambaS.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxGambaS.TabIndex = 28;
+            pictureBoxGambaS.TabStop = false;
+            pictureBoxGambaS.Visible = false;
+            // 
+            // buttonJolly
+            // 
+            buttonJolly.Font = new Font("Showcard Gothic", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            buttonJolly.Location = new Point(533, 380);
+            buttonJolly.Name = "buttonJolly";
+            buttonJolly.Size = new Size(100, 40);
+            buttonJolly.TabIndex = 29;
+            buttonJolly.Text = "Jolly";
+            buttonJolly.UseVisualStyleBackColor = true;
+            buttonJolly.Visible = false;
+            buttonJolly.Click += buttonJolly_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(861, 432);
-            Controls.Add(pictureBox2);
+            Controls.Add(buttonJolly);
+            Controls.Add(pictureBoxGambaS);
             Controls.Add(pictureBoxBraccioD);
-            Controls.Add(pictureBox1);
+            Controls.Add(pictureBoxBraccioS);
             Controls.Add(pictureBoxCorpo);
             Controls.Add(pictureBoxGambaD);
             Controls.Add(pictureBoxSopra);
@@ -411,7 +417,6 @@
             Controls.Add(buttonSport);
             Controls.Add(buttonAnimali);
             Controls.Add(buttonCibi);
-            Controls.Add(dateTimePicker1);
             Controls.Add(Titolo);
             Name = "Form1";
             Text = "Form1";
@@ -421,8 +426,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxSopra).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxBraccioD).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxGambaD).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxBraccioS).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxGambaS).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -430,7 +435,6 @@
         #endregion
 
         private Label Titolo;
-        private DateTimePicker dateTimePicker1;
         private Button buttonCibi;
         private Button buttonAnimali;
         private Button buttonSport;
@@ -456,7 +460,8 @@
         private PictureBox pictureBoxSopra;
         private PictureBox pictureBoxBraccioD;
         private PictureBox pictureBoxGambaD;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
+        private PictureBox pictureBoxBraccioS;
+        private PictureBox pictureBoxGambaS;
+        private Button buttonJolly;
     }
 }
