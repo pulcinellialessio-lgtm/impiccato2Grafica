@@ -31,6 +31,21 @@ namespace impiccato2Grafica
 
             buttonStart.Visible = true;
         }
+        public void visibleInterfacciaGioco()
+        {
+            textBoxInserimento.Visible = true;
+            labelInserisciLettera.Visible = true;
+            buttonInserisci.Visible = true;
+
+            textBoxParola.Visible = true;
+            labelInserisciParola.Visible = true;
+            buttonInserisciParola.Visible = true;
+
+            pictureBoxCorda.Visible = true;
+            pictureBoxSopra.Visible = true;
+
+            buttonJolly.Visible = true;
+        }
 
         public void invisible2()
         {
@@ -41,6 +56,21 @@ namespace impiccato2Grafica
             buttonInserisci.Visible = false;
             buttonInserisciParola.Visible = false;
             buttonJolly.Visible = false;    
+        }
+
+        public void invisible3()
+        {
+            textBoxInserimento.Visible = false;
+            labelInserisciLettera.Visible = false;
+            buttonInserisci.Visible = false;
+
+            textBoxParola.Visible = false;
+            labelInserisciParola.Visible = false;
+            buttonInserisciParola.Visible = false;
+
+            labelParola.Visible = false;
+
+            buttonJolly.Visible = false;
         }
         public Form1()
         {
@@ -105,21 +135,10 @@ namespace impiccato2Grafica
             invisible();
         }
 
-        private void buttonStart_Click(object sender, EventArgs e)
+        private void buttonStart_Click(object sender, EventArgs e) // bottone start che genera interfaccia di gioco
         {
             buttonStart.Visible = false;
-            textBoxInserimento.Visible = true;
-            labelInserisciLettera.Visible = true;
-            buttonInserisci.Visible = true;
-
-            textBoxParola.Visible = true;
-            labelInserisciParola.Visible = true;
-            buttonInserisciParola.Visible = true;
-
-            pictureBoxCorda.Visible = true;
-            pictureBoxSopra.Visible = true;
-
-            buttonJolly.Visible = true;
+            visibleInterfacciaGioco();
 
             ParolaNascosta = ParolaNascosta.ToLower();
 
@@ -131,8 +150,10 @@ namespace impiccato2Grafica
             labelParola.Text = trattini;
         }
 
-        private void buttonInserisci_Click(object sender, EventArgs e)
+        private void buttonInserisci_Click(object sender, EventArgs e) //Bottone inserisci parola
         {
+            labelParolaSbagliata.Visible = false;
+
             int a = 0;
             trattiniArray = trattini.ToCharArray();
             parolaNascostaArray = ParolaNascosta.ToCharArray();
@@ -159,7 +180,7 @@ namespace impiccato2Grafica
                 trovato = false;
             }
 
-            if (trovato == false)
+            if (trovato == false) //Codice persona impiccata
             {
                 vita--;
 
@@ -200,7 +221,7 @@ namespace impiccato2Grafica
 
             labelParola.Text = trattini;
         }
-        private void buttonInserisciParola_Click(object sender, EventArgs e)
+        private void buttonInserisciParola_Click(object sender, EventArgs e) //bottone inserimento parola
         {
             string Parola = textBoxParola.Text;
             char[] ParolaUguale = Parola.ToCharArray();
@@ -217,24 +238,14 @@ namespace impiccato2Grafica
             if (uguale == true)
             {
                 labelVincita.Visible = true;
-                textBoxInserimento.Visible = false;
-                labelInserisciLettera.Visible = false;
-                buttonInserisci.Visible = false;
-
-                textBoxParola.Visible = false;
-                labelInserisciParola.Visible = false;
-                buttonInserisciParola.Visible = false;
-
-                labelParola.Visible = false;
-
-                buttonJolly.Visible = false;
+                invisible3();
             }
             else
             {
                 labelParolaSbagliata.Visible = true;
             }
         }
-        private void buttonJolly_Click(object sender, EventArgs e)
+        private void buttonJolly_Click(object sender, EventArgs e) //bottone jolly che inserisce la prima lettera nella parola
         {
             trattiniArray = trattini.ToCharArray();
             parolaNascostaArray = ParolaNascosta.ToCharArray();
